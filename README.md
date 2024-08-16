@@ -16,32 +16,32 @@ A stationary time series is one whose statistical properties (mean, variance, au
 Thus, time series with trends, or with seasonality, are not stationary — the trend and seasonality will affect the value of the time series at different times. On the other hand, a white noise series is stationary — it does not matter when you observe it, it should look much the same at any point in time.
 
 #### Key characteristics of a stationary time series:
-    - Constant mean:
-                The average value of the series is constant over time.
-    - Constant variance:
-                The variability of the series around the mean is constant over time.
-    - Constant autocorrelation:
-                The relationship between observations at different time points remains constant over time.
+##### Constant mean:
+    The average value of the series is constant over time.
+##### Constant variance:
+    The variability of the series around the mean is constant over time.
+##### Constant autocorrelation:
+    The relationship between observations at different time points remains constant over time.
 #### Why is stationarity important?
 Most statistical time series models assume stationarity as a fundamental condition. Non-stationary data often needs to be transformed into stationary data before applying time series models. A stationary time series will have no predictable patterns in the long-term. Time plots will show the series to be roughly horizontal (although some cyclic behavior is possible), with constant variance.
 #### Common methods to achieve stationarity:
-    -1.	Differencing:
+##### 1.	Differencing:
     Subtracting the previous value from the current value to remove trends.
-    -2.	Log transformation:
+##### 2.	Log transformation:
     Can stabilize variance in some cases.
-    -3.	Other transformations:
+##### 3.	Other transformations:
     E.g., square root, power transformations.
 #### Methods to Check Stationarity:
 ##### 1.	Visual Inspection
-    -Time Series Plot:
-    Look for trends, seasonality, or other patterns. A stationary series should fluctuate around a constant mean without clear trends.
-    -ACF (Autocorrelation Function) and PACF (Partial Autocorrelation Function) Plots:
-    These plots measure the correlation of a time series with its past values. For a stationary series, the ACF and PACF should decay rapidly to zero.
+###### Time Series Plot:
+Look for trends, seasonality, or other patterns. A stationary series should fluctuate around a constant mean without clear trends.
+###### ACF (Autocorrelation Function) and PACF (Partial Autocorrelation Function) Plots:
+These plots measure the correlation of a time series with its past values. For a stationary series, the ACF and PACF should decay rapidly to zero.
 ##### 2.	Statistical Tests:
-    -Augmented Dickey-Fuller (ADF) Test:
-    Tests for the presence of a unit root, indicating non-stationarity. A low p-value suggests stationarity.
-    -Kwiatkowski-Phillips-Schmidt-Shin (KPSS) Test:
-    Tests for stationarity around a mean or trend. A high p-value suggests stationarity.
+###### Augmented Dickey-Fuller (ADF) Test:
+Tests for the presence of a unit root, indicating non-stationarity. A low p-value suggests stationarity.
+###### Kwiatkowski-Phillips-Schmidt-Shin (KPSS) Test:
+Tests for stationarity around a mean or trend. A high p-value suggests stationarity.
 #### Autoregressive models:
 In a multiple regression model, we forecast the variable of interest using a linear combination of predictors. In an auto regression model, we forecast the variable of interest using a linear combination of past values of the variable. The model assumes that the current value is a linear combination of past values plus a random error term. The term auto regression indicates that it is a regression of the variable against itself.
 <br>
