@@ -161,6 +161,103 @@ This approach provides a preliminary evaluation of the model's ability to captur
 Here’s the Detailed code:
 [View the code](NTPC.R)
 
+#### Analysis and Insights:
+
+1. We begin by examining the dataset and creating a visual representation of the closing price data. For a more detailed analysis, we incorporate additional indicators: Bollinger Bands, % Bollinger Change, trading volume, and MACD.
+![Data Head and charts](Visualization/DataVisuals.png)
+<br>
+
+2. we conduct ADF and KPSS test for the close price set to check the stationary.
+![ADF test Results](Visualization/ADFtest.png)
+<br>
+
+**Interpreting the ADF Test p-value of 0.9238:** A p-value of 0.9238 for the ADF test indicates strong evidence of a unit root in the time series. A high p-value (typically greater than 0.05) suggests that we fail to reject the null hypothesis, meaning there is strong evidence that the time series is non-stationary.
+<br>
+
+![KPSS test Results](Visualization/KPSStest.png)
+<br>
+
+**Interpretation from KPSS test:** The p-value is 0.01, which is less than the conventional significance level of 0.05. So, we reject the null hypothesis of level stationarity. This indicates that the time series exhibits non-stationarity. It suggests that the data contains a trend or other non-stationary components.
+<br>
+
+3.	After the these tests, we use ACF and PACF to analyze the dataset.
+![ACF & PACF](Visualization/ACF_PACF.png)
+<br>
+
+**Interpretation from ACF & PACF:** The ACF plot shows a slow decay, indicating the presence of a trend or non-stationarity in the data. There are significant spikes at multiple lags, suggesting complex autocorrelation patterns. Also, The PACF plot shows a similar pattern with significant spikes at multiple lags, indicating a complex relationship between the time series and its lagged values. The slow decay in both ACF and PACF suggests that the time series is likely non-stationary. The multiple significant spikes in both plots indicate a complex relationship between the data points, suggesting that a simple AR or MA model might not be sufficient.
+<br>
+
+4.	To address the non-stationarity indicated by the ADF test, the time series data underwent differencing. Differencing is a common technique to remove trends and stabilize the mean and variance of a time series. The first-order differenced series was then subjected to the ADF test again to assess its stationarity. We conclude that the series is stationary and proceed with modelling.
+![ADF test For Stationary ](Visualization/ADFstationary.png)
+<br>
+
+![Stationary line chart](Visualization/Stationary_Line_Chart.png)
+<br>
+
+5.	An auto-ARIMA model was applied using the auto.arima function in R. This function automatically determines the optimal values for the AR (p), integration (d), and MA (q) components of the ARIMA model.
+![Summary of Arima](Visualization/Arima_Model.png)
+
+Here, We specified our ARIMA (1,1,0) model.
+<br>
+
+6.	**Checking Residuals:** Examine the model summary to assess the residuals of the selected ARIMA model. Residuals in a time series model represent the difference between observed values and the values predicted by the model.
+![Residuals vs Time](Visualization/Residuals.png)
+<br>
+
+7.	we apply correlation tests to the dataset to confirm stationarity.
+![Histogram](Visualization/Residuals_Hist.png)
+We now check our residuals over a normal curve.  As we can see, the residuals plot has a descent normal curve adjustment, giving us a good point to continue this study.
+<br>
+
+8.	Now we make our last residuals plot, giving us the standardized residuals, ACF of residuals and p-values for Ljung-Box statistic plots. <br>
+With this 3 graphs we focus on the Ljung-Box p-values. For the Ljung-Box test we have that our null hypothesis is: <br> Hθ : The dataset points are independently distributed. <br>
+With this null hypothesis, a significant p-value greater than 0.05 does not reject the fact that the dataset points are not correlated. As we see that the p-value not reject null hypothesis. It allows us to make a generalized box test. Again in the generalized test it can be seen that our null hypothesis is still not rejected. It makes our study to continue with a solid motivation.
+<br>
+
+Having our ARIMA model, we applied and analysed and plotted the model prediction.
+![Ljung Box](Visualization/Ljung_Box.png)
+
+![Time Series Plot for NTPC.Close](Visualization/NTPC.Close.png)
+<br>
+
+#### ARIMA Results :
+With the model fitted, we can forecast daily closing prices into the future. We'll predict the close stock price for the next 30 days, or roughly one month. Let's visualize this forecast. As we see that we have a blue line that represents the mean of our prediction. <br>
+![Predication chart](Visualization/Forecast%20Arima.png)
+<br>
+With the blue line, there are  darker and light darker areas. Darker areas indicate 80% confidence, lighter areas 95% confidence. Thus, Lower and upper scenarios are represented.\
+<br>
+
+Here is the our Predicated Values,
+![Table](Visualization/Table.png)
+<br>
+
+We extracted our Forecast blue line from the Arima model.
+![Extracted Predication](Visualization/Predicated_line.png)
+
+<br>
+After applying our prediction to training data, we examine how well our forecast aligns with the actual closing price movements in the test data on average.<br>
+
+![Train & Test set](Visualization/Train_Test.png)
+<br>
+Red line shows how well our guess about stock price matches real ending price. This guess seems good at telling where price will go next.
+<br>
+
+#### References :
+[1] A. Trapletti and K. Hornik (2016). tseries: Time Series Analysis and Computational Finance. R package version 0.10-35. <br>
+[2] https://finance.yahoo.com <br>
+[3] S. M. Idrees, M. A. Alam and P. Agarwal, "A Prediction Approach for Stock Market Volatility Based on Time Series Data," in IEEE Access, vol. 7, pp. 17287-17298, 2019. doi: 10.1109/ACCESS.2019.2895252 <br>
+[4] E. W. Saad, D. V. Prokhorov and D. C. Wunsch, "Comparative study of stock trend prediction using time delay, recurrent and probabilistic neural networks," in IEEE Transactions on Neural Networks, vol. 9, no. 6, pp. 1456-1470, Nov. 1998. doi: 10.1109/72.728395  <br>
+[5] J. Chou and T. Nguyen, "Forward Forecast of Stock Price Using Sliding-Window Metaheuristic-Optimized Machine-Learning Regression," in IEEE Transactions on Industrial Informatics, vol. 14, no. 7, pp. 3132-3142, July 2018. doi: 10.1109/TII.2018.2794389
+<br>
+
+### Author: NARESH KUMAR
+
+
+
+
+
+
+
 
 
 
