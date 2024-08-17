@@ -1,23 +1,25 @@
 # Time-Series-Forecasting-NTPC-Stock-Data-
 ## Contents
 * [Overview](###Overview)
-* [Objective](###Objective :)
-* [Time Series](###Time Series:)
-* [Time Series Forecasting](###Time Series Forecasting:)
+* [Objective](###Objective)
+* [Time Series](###Time Series)
+* [Time Series Forecasting](###Time Series Forecasting)
+* [Stationarity](###Stationarity)
+* [Key characteristics of a stationary time series](####Key characteristics of a stationary time series)
 
 ### Overview
 This project investigates the application of various time series and machine learning forecasting models to a real-world stock closing price dataset. We begin by exploring the characteristics of stock prices and conducting a comprehensive analysis of the dataset. Subsequently, we focus on predicting the daily closing price of the S&P500 index using a range of forecasting models. These models will undergo rigorous evaluation, comparison, and analysis aligned with the project guidelines. Ultimately, the project aims to build a model capable of forecasting the S&P500 closing price for the next 30 days.
-### Objective :
+### Objective
 Predicting stock market behaviour has long been a subject of interest, with many believing it to be a complex, unpredictable process. The random walk theory, emphasizing the independence of past and future price movements, supports this view. However, recent advancements in data science and modelling techniques encourage a re-examination of this perspective.
 <br>
 This research aims to explore the potential of various forecasting models in predicting stock prices, specifically the S&P500 closing price. By comparing and contrasting these models, we seek to demonstrate their utility as tools for analysing stock price movements rather than infallible prediction instruments. Ultimately, this study aims to contribute to the understanding of stock price dynamics and the application of data-driven forecasting methods in financial analysis.
 <br>
 
-### Time Series:
+### Time Series
 A time series is a sequence of data points collected, recorded, or measured at successive, evenly-spaced time intervals. Each data point represents observations or measurements taken over time, such as stock prices, temperature readings, or sales figures. Time series data is commonly represented graphically with time on the horizontal axis and the variable of interest on the vertical axis, allowing analysts to identify trends, patterns, and changes over time. Time series data is often represented graphically as a line plot, with time depicted on the horizontal x-axis and the variable’s values displayed on the vertical y-axis. This graphical representation facilitates the visualization of trends, patterns, and fluctuations in the variable over time, aiding in the analysis and interpretation of the data. 
 <br>
 
-### Time Series Forecasting:
+### Time Series Forecasting
 A forecasting algorithm is a computational process that predicts future values based on historical data. It involves collecting, processing, and analysing past data points to create a model that can estimate future outcomes for a specific variable. Time series forecasting is the process of analysing time series data using statistics and modelling to make predictions and inform strategic decision-making. It’s not always an exact prediction, and likelihood of forecasts can vary wildly—especially when dealing with the commonly fluctuating variables in time series data as well as factors outside our control. However, forecasting insight about which outcomes are more likely—or less likely— to occur than other potential outcomes. Often, the more comprehensive the data we have, the more accurate the forecasts can be. While forecasting and “prediction” generally mean the same thing, there is a notable distinction. In some industries, forecasting might refer to data at a specific future point in time, while prediction refers to future data in general. Series forecasting is often used in conjunction with time series analysis.
 <br>
 Time series analysis involves developing models to gain an understanding of the data to understand the underlying causes. Analysis can provide the “why” behind the outcomes you are seeing. Forecasting then takes the next step of what to do with that knowledge and the predictable extrapolations of what might happen in the future. 
