@@ -1,4 +1,7 @@
 # Time-Series-Forecasting-NTPC-Stock-Data-
+This repository contains R code for time series forecasting of stock prices using the ARIMA model. The project focuses on building and evaluating an ARIMA model to predict future stock values. It includes data preprocessing, model training, evaluation, and visualization.
+<br>
+
 ## Contents
 * [Overview](###Overview)
 * [Objective](###Objective)
