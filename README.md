@@ -136,11 +136,7 @@ This approach provides a preliminary evaluation of the model's ability to captur
 
 #### Code Snippet: 
 Here’s the Detailed code:
-[View the code](NTPC.R)
 
-#### Analysis and Insights:
-
-1. We begin by examining the dataset and creating a visual representation of the closing price data,
 
 
 
