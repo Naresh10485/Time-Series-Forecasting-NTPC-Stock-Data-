@@ -227,11 +227,11 @@ With the model fitted, we can forecast daily closing prices into the future. We'
 With the blue line, there are  darker and light darker areas. Darker areas indicate 80% confidence, lighter areas 95% confidence. Thus, Lower and upper scenarios are represented.\
 <br>
 
-Here is the our Predicated Values,
+Here is the our Predicated Values, <br>
 ![Table](Visualization/Table.png)
 <br>
 
-We extracted our Forecast blue line from the Arima model.
+We extracted our Forecast blue line from the Arima model. <br>
 ![Extracted Predication](Visualization/Predicated_line.png)
 
 <br>
