@@ -15,16 +15,16 @@
 * [Steps_Arima](####Steps to build ARIMA model)
 * [MACD](###Moving Average Convergence Divergence (MACD))
 * [Formula](####Formula)
-* [EMA](##### Exponential Moving Average)
-* [Trading_Signals](#####Trading Signals)
-* [Significance_MACD](#####Significance of MACD)
-* [Learning_from_MACD](#####Learning from MACD)
-* [Limitations](#####Limitations)
-* [NTPC_Stock_Data](####NTPC Stock Price Data (2022-2024))
-* [Code](####Code snippet)
-* [Analysis](####Analysis and Insights)
-* [Results](####Arima Results)
-* [References](####References)
+* [EMA](#### Exponential Moving Average)
+* [Trading_Signals](####Trading Signals)
+* [Significance_MACD](####Significance of MACD)
+* [Learning_from_MACD](####Learning from MACD)
+* [Limitations](####Limitations)
+* [NTPC_Stock_Data](###NTPC Stock Price Data (2022-2024))
+* [Code](###Code snippet)
+* [Analysis](###Analysis and Insights)
+* [Results](###Arima Results)
+* [References](###References)
 
 
 ### Overview
@@ -77,7 +77,7 @@ Tests for the presence of a unit root, indicating non-stationarity. A low p-valu
 Tests for stationarity around a mean or trend. A high p-value suggests stationarity.
 <br>
 
-#### Autoregressive models
+### Autoregressive models
 In a multiple regression model, we forecast the variable of interest using a linear combination of predictors. In an auto regression model, we forecast the variable of interest using a linear combination of past values of the variable. The model assumes that the current value is a linear combination of past values plus a random error term. The term auto regression indicates that it is a regression of the variable against itself.
 <br>
 Thus, an autoregressive model of order p can be written as:
@@ -87,14 +87,14 @@ where ε_t is white noise. This is like a multiple regression but with lagged va
 Autoregressive models are remarkably flexible at handling a wide range of different time series patterns. Changing the parameters ϕ_1  ,…,ϕ_p results in different time series patterns. The variance of the error term εt will only change the scale of the series, not the patterns.
 <br>
 
-#### Moving Average Models
+### Moving Average Models
 Rather than using past values of the forecast variable in a regression, a moving average model uses past forecast errors in a regression-like model.
  ![MA_equation](Visualization/MAmodel.png)
 
 where εt is white noise. We refer to this as an MA(q) model, a moving average model of order q. Of course, we do not observe the values of εt, so it is not really a regression in the usual sense. The model assumes that the current value is a linear combination of past error terms plus a random error term.
 <br>
 
-#### Arima : Autoregressive Integrating Moving Average
+### Arima : Autoregressive Integrating Moving Average
 ARIMA is a statistical model used for time series data. It stands for Auto Regressive Integrated Moving Average. This method is often referred to as the Box-Jenkins approach. Box and Jenkins introduced the idea of using differencing to convert data that doesn't have a constant mean or variance (non-stationary) into data that does (stationary). <br>
 The full model can be written as,
  ![Arima_equation](Visualization/Arima.png)
@@ -110,7 +110,7 @@ The ARIMA model combines three key elements:
 Together, these components form the ARIMA(p, d, q) model, where p, d, and q represent the order of autoregression, differencing, and moving average, respectively.
 <br>
 
-##### Steps to build ARIMA model <br>
+#### Steps to build ARIMA model <br>
 **Step 1: Testing for Stationarity**
 Stationarity is a crucial property in time series analysis. A stationary time series exhibits constant statistical properties over time, including mean, variance, and autocorrelation. This characteristic is essential for applying many time series models, such as ARIMA.
 <br>
@@ -135,31 +135,31 @@ Once the optimal values for p, d, and q have been determined, the next step invo
 The ARIMA model is fitted to the time series data to estimate the coefficients associated with the AR and MA terms. The model's performance is assessed using metrics like Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and Mean Absolute Percentage Error (MAPE) on a training or validation dataset.
 <br>
 
-#### Moving Average Convergence Divergence (MACD)
+### Moving Average Convergence Divergence (MACD)
 MACD is a technical indicator used to identify trends and potential buy or sell opportunities. It measures the relationship between two moving averages of a security's price. Specifically, it is calculated by subtracting the 26-period Exponential Moving Average (EMA) from the 12-period EMA. <br>
-##### Formula:
+#### Formula:
                 MACD = 12-Period EMA − 26-Period EMA
 <br>
 
-##### Exponential Moving Average
+#### Exponential Moving Average
 An exponential moving average (EMA) is a type of moving average (MA) that places a greater weight and significance on the most recent data points. The exponential moving average is also referred to as the exponentially weighted moving average. An exponentially weighted moving average reacts more significantly to recent price changes than a simple moving average (SMA), which applies an equal weight to all observations in the period. <br>
 **MACD Line:** The result of subtracting the 26-period EMA from the 12-period EMA is called the MACD line. <br>
 **Signal Line:** To generate trading signals, a nine-period EMA of the MACD line is calculated, known as the signal line.
 <br>
 
-##### Trading Signals <br>
+#### Trading Signals <br>
 **Bullish Signal:** When the MACD line crosses above the signal line, it's often considered a bullish signal, indicating a potential upward trend. <br>
 **Bearish Signal:** When the MACD line crosses below the signal line, it's often seen as a bearish signal, suggesting a potential downward trend.
 <br>
 
-##### Significance of MACD
+#### Significance of MACD
 MACD is a versatile tool for technical traders, providing valuable insights into market trends and momentum. MACD helps identify the overall direction of a trend (upward or downward) by observing the relationship between the MACD line and the signal line.
 **Momentum Confirmation:** The speed at which the MACD line crosses the signal line indicates the strength of the underlying momentum. <br>
 **Divergence Detection:** MACD can identify potential trend reversals by comparing its movement to the price action. When the two diverge, it might signal a weakening trend. <br>
 **Overbought/Oversold Conditions:** While not a primary function, MACD can provide some clues about overbought or oversold conditions based on its extreme values.
 <br>
 
-##### Learning from MACD
+#### Learning from MACD
 **Positive MACD:** Indicates the 12-period EMA is above the 26-period EMA, suggesting a potential uptrend. <br>
 **Negative MACD:** Indicates the 12-period EMA is below the 26-period EMA, suggesting a potential downtrend. <br>
 **MACD Histogram:** Represents the difference between the MACD line and its signal line. <br>
@@ -168,11 +168,11 @@ _A negative histogram suggests bearish momentum._
 <br>
 The magnitude of the MACD value and the histogram's height can provide additional clues about the strength of the trend or the potential for a reversal.
 
-##### Limitations
+#### Limitations
 Divergence signals often precede a potential reversal, but not always. Many divergences result in continued price movement in the same direction, leading to false signals. MACD divergence doesn't capture all market reversals. Some significant reversals occur without a clear divergence signal. In other words, it predicts too many reversals that don’t occur and not enough real price reversals.
 <br>
 
-#### NTPC Stock Price Data (2022-2024)
+### NTPC Stock Price Data (2022-2024)
 To investigate the stock price behaviour of NTPC, daily stock price data was obtained from [Yahoo Finance](https://finance.yahoo.com) using the quantmod package in R. The dataset spanned from January 1, 2024, to June 01, 2024. Rows containing missing values were removed using the na.omit function to ensure data integrity for subsequent analysis. The index of the NTPC.NS data frame, representing dates, was converted into a proper date format using the lubridate package. This allows for date-based analysis and visualizations. The head function was used to display the first few rows of the NTPC.NS data frame, providing a glimpse into the structure and content of the data. Also, Two types of charts were created to visualize the downloaded data; line Chart and Technical Analysis Indicators. To ensure the applicability of ARIMA models, the stationarity of the time series was assessed using the ADF and KPSS tests. These tests help determine if the data has a constant mean, variance, and autocorrelation over time.
 <br>
 
@@ -184,11 +184,11 @@ To investigate the stock price behaviour of NTPC, daily stock price data was obt
 <br>
 This approach provides a preliminary evaluation of the model's ability to capture the underlying patterns in the stock price data and generate accurate forecasts.
 
-#### Code Snippet
+### Code Snippet
 Here’s the Detailed code:
 [View the code](NTPC.R)
 
-#### Analysis and Insights
+### Analysis and Insights
 
 1. We begin by examining the dataset and creating a visual representation of the closing price data. For a more detailed analysis, we incorporate additional indicators: Bollinger Bands, % Bollinger Change, trading volume, and MACD.
 ![Data Head and charts](Visualization/DataVisuals.png)
@@ -247,7 +247,7 @@ Having our ARIMA model, we applied and analysed and plotted the model prediction
 ![Time Series Plot for NTPC.Close](Visualization/NTPC.Close.png)
 <br>
 
-#### ARIMA Results
+### ARIMA Results
 With the model fitted, we can forecast daily closing prices into the future. We'll predict the close stock price for the next 30 days, or roughly one month. Let's visualize this forecast. As we see that we have a blue line that represents the mean of our prediction. <br>
 ![Predication chart](Visualization/Forecast%20Arima.png)
 <br>
@@ -269,7 +269,7 @@ After applying our prediction to training data, we examine how well our forecast
 Red line shows how well our guess about stock price matches real ending price. This guess seems good at telling where price will go next.
 <br>
 
-#### References
+### References
 [1] A. Trapletti and K. Hornik (2016). tseries: Time Series Analysis and Computational Finance. R package version 0.10-35. <br>
 [2] https://finance.yahoo.com <br>
 [3] S. M. Idrees, M. A. Alam and P. Agarwal, "A Prediction Approach for Stock Market Volatility Based on Time Series Data," in IEEE Access, vol. 7, pp. 17287-17298, 2019. doi: 10.1109/ACCESS.2019.2895252 <br>
@@ -277,7 +277,7 @@ Red line shows how well our guess about stock price matches real ending price. T
 [5] J. Chou and T. Nguyen, "Forward Forecast of Stock Price Using Sliding-Window Metaheuristic-Optimized Machine-Learning Regression," in IEEE Transactions on Industrial Informatics, vol. 14, no. 7, pp. 3132-3142, July 2018. doi: 10.1109/TII.2018.2794389
 <br>
 
-### Author: NARESH KUMAR
+## Author: NARESH KUMAR
 
 
 
