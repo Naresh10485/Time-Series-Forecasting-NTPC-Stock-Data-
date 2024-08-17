@@ -11,7 +11,7 @@
 * [Methods to Check Stationarity](####Methods_to_Check_Stationarity)
 * [Autoregressive model](###Autoregressive_models)
 * [Moving Average Models](###Moving_Average_Models)
-* [Arima : Autoregressive Integrating Moving Average](###Arima_:_Autoregressive_Integrating_Moving_Average)
+* [Arima : Autoregressive Integrating Moving Average](###Arima:_Autoregressive_Integrating_Moving_Average)
 * [Steps to build ARIMA model](####Steps_to_build_ARIMA_model)
 * [Moving Average Convergence Divergence (MACD)](###Moving_Average_Convergence_Divergence_(MACD))
 * [Formula](####Formula)
@@ -94,7 +94,7 @@ Rather than using past values of the forecast variable in a regression, a moving
 where εt is white noise. We refer to this as an MA(q) model, a moving average model of order q. Of course, we do not observe the values of εt, so it is not really a regression in the usual sense. The model assumes that the current value is a linear combination of past error terms plus a random error term.
 <br>
 
-### Arima : Autoregressive Integrating Moving Average
+### Arima: Autoregressive Integrating Moving Average
 ARIMA is a statistical model used for time series data. It stands for Auto Regressive Integrated Moving Average. This method is often referred to as the Box-Jenkins approach. Box and Jenkins introduced the idea of using differencing to convert data that doesn't have a constant mean or variance (non-stationary) into data that does (stationary). <br>
 The full model can be written as,
  ![Arima_equation](Visualization/Arima.png)
