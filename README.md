@@ -1,11 +1,11 @@
 # Time-Series-Forecasting-NTPC-Stock-Data-
 ## Contents
-* [Overview](### Overview :)
-* [Objective](### Objective :)
-* [Time Series](### Time Series:)
-* [Time Series Forecasting](### Time Series Forecasting:)
-## Contents
-### Overview :
+* [Overview](###Overview)
+* [Objective](###Objective :)
+* [Time Series](###Time Series:)
+* [Time Series Forecasting](###Time Series Forecasting:)
+
+### Overview
 This project investigates the application of various time series and machine learning forecasting models to a real-world stock closing price dataset. We begin by exploring the characteristics of stock prices and conducting a comprehensive analysis of the dataset. Subsequently, we focus on predicting the daily closing price of the S&P500 index using a range of forecasting models. These models will undergo rigorous evaluation, comparison, and analysis aligned with the project guidelines. Ultimately, the project aims to build a model capable of forecasting the S&P500 closing price for the next 30 days.
 ### Objective :
 Predicting stock market behaviour has long been a subject of interest, with many believing it to be a complex, unpredictable process. The random walk theory, emphasizing the independence of past and future price movements, supports this view. However, recent advancements in data science and modelling techniques encourage a re-examination of this perspective.
