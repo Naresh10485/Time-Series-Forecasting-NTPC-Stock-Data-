@@ -2,7 +2,7 @@
 ## Contents
 * [Overview](###Overview)
 * [Objective](###Objective)
-* [Time_Series](###Time Series)
+* [Time_Series](###Time_Series)
 * [Time_Series_Forecasting](###Time Series Forecasting)
 * [Stationarity](###Stationarity)
 * [Key_characteristics](####Key characteristics of a stationary time series)
@@ -17,7 +17,7 @@
 * [Formula](####Formula)
 * [EMA](#### Exponential Moving Average)
 * [Trading_Signals](####Trading Signals)
-* [Significance_MACD](####Significance of MACD)
+* [Significance_MACD](####Significane of MACD)
 * [Learning_from_MACD](####Learning from MACD)
 * [Limitations](####Limitations)
 * [NTPC_Stock_Data](###NTPC Stock Price Data (2022-2024))
