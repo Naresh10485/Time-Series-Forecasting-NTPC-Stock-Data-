@@ -2,10 +2,30 @@
 ## Contents
 * [Overview](###Overview)
 * [Objective](###Objective)
-* [Time Series](###Time Series)
-* [Time Series Forecasting](###Time Series Forecasting)
+* [Time_Series](###Time Series)
+* [Time_Series_Forecasting](###Time Series Forecasting)
 * [Stationarity](###Stationarity)
-* [Key characteristics of a stationary time series](####Key characteristics of a stationary time series)
+* [Key_characteristics](####Key characteristics of a stationary time series)
+* [Stationary_Importance](####Why is stationarity important?)
+* [Achieving_Stationarity](####Common methods to achieve stationarity)
+* [Checking_Stationarity](####Methods to Check Stationarity)
+* [Autoregressive_model](###Autoregressive models)
+* [Moving_Average](###Moving Average Models)
+* [Arima_Models](###Arima : Autoregressive Integrating Moving Average)
+* [Steps_Arima](####Steps to build ARIMA model)
+* [MACD](###Moving Average Convergence Divergence (MACD))
+* [Formula](####Formula)
+* [EMA](##### Exponential Moving Average)
+* [Trading_Signals](#####Trading Signals)
+* [Significance_MACD](#####Significance of MACD)
+* [Learning_from_MACD](#####Learning from MACD)
+* [Limitations](#####Limitations)
+* [NTPC_Stock_Data](####NTPC Stock Price Data (2022-2024))
+* [Code](####Code snippet)
+* [Analysis](####Analysis and Insights)
+* [Results](####Arima Results)
+* [References](####References)
+
 
 ### Overview
 This project investigates the application of various time series and machine learning forecasting models to a real-world stock closing price dataset. We begin by exploring the characteristics of stock prices and conducting a comprehensive analysis of the dataset. Subsequently, we focus on predicting the daily closing price of the S&P500 index using a range of forecasting models. These models will undergo rigorous evaluation, comparison, and analysis aligned with the project guidelines. Ultimately, the project aims to build a model capable of forecasting the S&P500 closing price for the next 30 days.
@@ -24,12 +44,12 @@ A forecasting algorithm is a computational process that predicts future values b
 <br>
 Time series analysis involves developing models to gain an understanding of the data to understand the underlying causes. Analysis can provide the “why” behind the outcomes you are seeing. Forecasting then takes the next step of what to do with that knowledge and the predictable extrapolations of what might happen in the future. 
 
-### Stationarity:
+### Stationarity
 A stationary time series is one whose statistical properties (mean, variance, autocorrelation) remain constant over time. In simpler terms, the data doesn't exhibit trends, seasonality, or other patterns that change systematically over time.
 <br>
 Thus, time series with trends, or with seasonality, are not stationary — the trend and seasonality will affect the value of the time series at different times. On the other hand, a white noise series is stationary — it does not matter when you observe it, it should look much the same at any point in time.
 
-#### Key characteristics of a stationary time series:
+#### Key characteristics of a stationary time series
 **Constant mean:** The average value of the series is constant over time. <br>
 **Constant variance:** The variability of the series around the mean is constant over time. <br>
 **Constant autocorrelation:** The relationship between observations at different time points remains constant over time.
@@ -39,25 +59,25 @@ Thus, time series with trends, or with seasonality, are not stationary — the t
 Most statistical time series models assume stationarity as a fundamental condition. Non-stationary data often needs to be transformed into stationary data before applying time series models. A stationary time series will have no predictable patterns in the long-term. Time plots will show the series to be roughly horizontal (although some cyclic behavior is possible), with constant variance.
 <br>
 
-#### Common methods to achieve stationarity:
+#### Common methods to achieve stationarity
 **1.	Differencing:** Subtracting the previous value from the current value to remove trends. <br>
 **2.	Log transformation:** Can stabilize variance in some cases. <br>
 **3.	Other transformations:** E.g., square root, power transformations. <br>
 
-#### Methods to Check Stationarity:
-##### 1.	Visual Inspection
+#### Methods to Check Stationarity
+**1.	Visual Inspection** <br>
 **Time Series Plot:** Look for trends, seasonality, or other patterns. A stationary series should fluctuate around a constant mean without clear trends. <br>
 **ACF (Autocorrelation Function) and PACF (Partial Autocorrelation Function) Plots:** These plots measure the correlation of a time series with its past values. For a stationary series, the ACF and PACF should decay rapidly to zero.
 <br>
 
-##### 2.	Statistical Tests:
+**2.	Statistical Tests** <br>
 **Augmented Dickey-Fuller (ADF) Test:**
 Tests for the presence of a unit root, indicating non-stationarity. A low p-value suggests stationarity. <br>
 **Kwiatkowski-Phillips-Schmidt-Shin (KPSS) Test:**
 Tests for stationarity around a mean or trend. A high p-value suggests stationarity.
 <br>
 
-#### Autoregressive models:
+#### Autoregressive models
 In a multiple regression model, we forecast the variable of interest using a linear combination of predictors. In an auto regression model, we forecast the variable of interest using a linear combination of past values of the variable. The model assumes that the current value is a linear combination of past values plus a random error term. The term auto regression indicates that it is a regression of the variable against itself.
 <br>
 Thus, an autoregressive model of order p can be written as:
@@ -67,7 +87,7 @@ where ε_t is white noise. This is like a multiple regression but with lagged va
 Autoregressive models are remarkably flexible at handling a wide range of different time series patterns. Changing the parameters ϕ_1  ,…,ϕ_p results in different time series patterns. The variance of the error term εt will only change the scale of the series, not the patterns.
 <br>
 
-#### Moving Average Models: 
+#### Moving Average Models
 Rather than using past values of the forecast variable in a regression, a moving average model uses past forecast errors in a regression-like model.
  ![MA_equation](Visualization/MAmodel.png)
 
@@ -90,7 +110,7 @@ The ARIMA model combines three key elements:
 Together, these components form the ARIMA(p, d, q) model, where p, d, and q represent the order of autoregression, differencing, and moving average, respectively.
 <br>
 
-##### Steps to build ARIMA model. <br>
+##### Steps to build ARIMA model <br>
 **Step 1: Testing for Stationarity**
 Stationarity is a crucial property in time series analysis. A stationary time series exhibits constant statistical properties over time, including mean, variance, and autocorrelation. This characteristic is essential for applying many time series models, such as ARIMA.
 <br>
@@ -115,31 +135,31 @@ Once the optimal values for p, d, and q have been determined, the next step invo
 The ARIMA model is fitted to the time series data to estimate the coefficients associated with the AR and MA terms. The model's performance is assessed using metrics like Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and Mean Absolute Percentage Error (MAPE) on a training or validation dataset.
 <br>
 
-#### Moving Average Convergence Divergence (MACD):
+#### Moving Average Convergence Divergence (MACD)
 MACD is a technical indicator used to identify trends and potential buy or sell opportunities. It measures the relationship between two moving averages of a security's price. Specifically, it is calculated by subtracting the 26-period Exponential Moving Average (EMA) from the 12-period EMA. <br>
 ##### Formula:
                 MACD = 12-Period EMA − 26-Period EMA
 <br>
 
-##### Exponential Moving Average: 
+##### Exponential Moving Average
 An exponential moving average (EMA) is a type of moving average (MA) that places a greater weight and significance on the most recent data points. The exponential moving average is also referred to as the exponentially weighted moving average. An exponentially weighted moving average reacts more significantly to recent price changes than a simple moving average (SMA), which applies an equal weight to all observations in the period. <br>
 **MACD Line:** The result of subtracting the 26-period EMA from the 12-period EMA is called the MACD line. <br>
 **Signal Line:** To generate trading signals, a nine-period EMA of the MACD line is calculated, known as the signal line.
 <br>
 
-##### Trading Signals: <br>
+##### Trading Signals <br>
 **Bullish Signal:** When the MACD line crosses above the signal line, it's often considered a bullish signal, indicating a potential upward trend. <br>
 **Bearish Signal:** When the MACD line crosses below the signal line, it's often seen as a bearish signal, suggesting a potential downward trend.
 <br>
 
-##### Significance of MACD: 
+##### Significance of MACD
 MACD is a versatile tool for technical traders, providing valuable insights into market trends and momentum. MACD helps identify the overall direction of a trend (upward or downward) by observing the relationship between the MACD line and the signal line.
 **Momentum Confirmation:** The speed at which the MACD line crosses the signal line indicates the strength of the underlying momentum. <br>
 **Divergence Detection:** MACD can identify potential trend reversals by comparing its movement to the price action. When the two diverge, it might signal a weakening trend. <br>
 **Overbought/Oversold Conditions:** While not a primary function, MACD can provide some clues about overbought or oversold conditions based on its extreme values.
 <br>
 
-##### Learning from MACD :
+##### Learning from MACD
 **Positive MACD:** Indicates the 12-period EMA is above the 26-period EMA, suggesting a potential uptrend. <br>
 **Negative MACD:** Indicates the 12-period EMA is below the 26-period EMA, suggesting a potential downtrend. <br>
 **MACD Histogram:** Represents the difference between the MACD line and its signal line. <br>
@@ -148,7 +168,7 @@ _A negative histogram suggests bearish momentum._
 <br>
 The magnitude of the MACD value and the histogram's height can provide additional clues about the strength of the trend or the potential for a reversal.
 
-##### Limitations :
+##### Limitations
 Divergence signals often precede a potential reversal, but not always. Many divergences result in continued price movement in the same direction, leading to false signals. MACD divergence doesn't capture all market reversals. Some significant reversals occur without a clear divergence signal. In other words, it predicts too many reversals that don’t occur and not enough real price reversals.
 <br>
 
@@ -164,11 +184,11 @@ To investigate the stock price behaviour of NTPC, daily stock price data was obt
 <br>
 This approach provides a preliminary evaluation of the model's ability to capture the underlying patterns in the stock price data and generate accurate forecasts.
 
-#### Code Snippet: 
+#### Code Snippet
 Here’s the Detailed code:
 [View the code](NTPC.R)
 
-#### Analysis and Insights:
+#### Analysis and Insights
 
 1. We begin by examining the dataset and creating a visual representation of the closing price data. For a more detailed analysis, we incorporate additional indicators: Bollinger Bands, % Bollinger Change, trading volume, and MACD.
 ![Data Head and charts](Visualization/DataVisuals.png)
@@ -227,7 +247,7 @@ Having our ARIMA model, we applied and analysed and plotted the model prediction
 ![Time Series Plot for NTPC.Close](Visualization/NTPC.Close.png)
 <br>
 
-#### ARIMA Results :
+#### ARIMA Results
 With the model fitted, we can forecast daily closing prices into the future. We'll predict the close stock price for the next 30 days, or roughly one month. Let's visualize this forecast. As we see that we have a blue line that represents the mean of our prediction. <br>
 ![Predication chart](Visualization/Forecast%20Arima.png)
 <br>
@@ -249,7 +269,7 @@ After applying our prediction to training data, we examine how well our forecast
 Red line shows how well our guess about stock price matches real ending price. This guess seems good at telling where price will go next.
 <br>
 
-#### References :
+#### References
 [1] A. Trapletti and K. Hornik (2016). tseries: Time Series Analysis and Computational Finance. R package version 0.10-35. <br>
 [2] https://finance.yahoo.com <br>
 [3] S. M. Idrees, M. A. Alam and P. Agarwal, "A Prediction Approach for Stock Market Volatility Based on Time Series Data," in IEEE Access, vol. 7, pp. 17287-17298, 2019. doi: 10.1109/ACCESS.2019.2895252 <br>
