@@ -53,7 +53,7 @@ Tests for stationarity around a mean or trend. A high p-value suggests stationar
 In a multiple regression model, we forecast the variable of interest using a linear combination of predictors. In an auto regression model, we forecast the variable of interest using a linear combination of past values of the variable. The model assumes that the current value is a linear combination of past values plus a random error term. The term auto regression indicates that it is a regression of the variable against itself.
 <br>
 Thus, an autoregressive model of order p can be written as:
- ![AR_equation](Visualization/ARmodel.png)
+ ![AR_equation](Time-Series-Forecasting-NTPC-Stock-Data-/Visualization/ARmodel.png)
 
 where ε_t is white noise. This is like a multiple regression but with lagged values of y_t as predictors. We refer to this as an AR(p) model, an autoregressive model of order p.
 Autoregressive models are remarkably flexible at handling a wide range of different time series patterns. Changing the parameters ϕ_1  ,…,ϕ_p results in different time series patterns. The variance of the error term εt will only change the scale of the series, not the patterns.
