@@ -23,12 +23,9 @@ A stationary time series is one whose statistical properties (mean, variance, au
 Thus, time series with trends, or with seasonality, are not stationary — the trend and seasonality will affect the value of the time series at different times. On the other hand, a white noise series is stationary — it does not matter when you observe it, it should look much the same at any point in time.
 
 #### Key characteristics of a stationary time series:
-##### Constant mean:
-The average value of the series is constant over time. <br>
-##### Constant variance:
-The variability of the series around the mean is constant over time. <br>
-##### Constant autocorrelation: 
-The relationship between observations at different time points remains constant over time.
+**Constant mean:** The average value of the series is constant over time. <br>
+**Constant variance:** The variability of the series around the mean is constant over time. <br>
+**Constant autocorrelation:** The relationship between observations at different time points remains constant over time.
 <br>
 
 #### Why is stationarity important?
@@ -162,6 +159,7 @@ This approach provides a preliminary evaluation of the model's ability to captur
 
 #### Code Snippet: 
 Here’s the Detailed code:
+[View the code](NTPC.R)
 
 
 
